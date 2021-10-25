@@ -20,7 +20,19 @@ const defaultExceptionInfo = {
     adhd: false,
 }
 const hasPassed = (scoreTheory = 0, passedPractical = false, exceptionInfo = defaultExceptionInfo) => {
-
+if (scoreTheory >= 90 && passedPractical === true)
+{
+    return true
+}
+else if (exceptionInfo.adhd === true || exceptionInfo.dyslexia === true  && scoreTheory >= 80 && passedPractical === true) {
+    return true
+}
+else if (exceptionInfo.adhd === true && exceptionInfo.dyslexia === true  && scoreTheory >= 70 && passedPractical === true){
+    return true
+}
+else {
+return false
+}
 }
 
 
